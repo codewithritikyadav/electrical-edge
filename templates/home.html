@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="Home">
+
+    <div class="hero-left">
+
+        <span class="badge">
+            ⚡ Trusted by Electrical Engineering Students
+        </span>
+
+        <h1>
+            Electrical Edge
+        </h1>
+
+        <h2>
+            Where Electrical Engineers Learn and Grow
+        </h2>
+
+        <p>
+            Access premium study notes, previous year questions,
+            formula sheets, GATE preparation resources and
+            academic materials designed specifically for
+            Electrical Engineering students.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#resources" class="btn-primary">
+               Explore Resources
+            </a>
+
+            <a href="#subjects" class="btn-secondary">
+                View Subjects
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="{% static 'images/electrical-hero.png' %}"
+             alt="Electrical Engineering">
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+<section class="subjects" id="subjects">
+
+    <div class="section-title">
+        <h2>Popular Subjects</h2>
+        <p>Comprehensive resources for every major subject.</p>
+    </div>
+
+    <div class="subject-grid">
+
+        <div class="subject-card">
+            ⚡
+            <h3>Electrical Machines</h3>
+        </div>
+
+        <div class="subject-card">
+            🔌
+            <h3>Power Systems</h3>
+        </div>
+
+        <div class="subject-card">
+            📊
+            <h3>Control Systems</h3>
+        </div>
+
+        <div class="subject-card">
+            💡
+            <h3>Power Electronics</h3>
+        </div>
+
+        <div class="subject-card">
+            📡
+            <h3>Signals & Systems</h3>
+        </div>
+
+        <div class="subject-card">
+            🔋
+            <h3>Network Theory</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat-card">
+        <h3>10K+</h3>
+        <p>Students</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>500+</h3>
+        <p>Study Notes</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>100+</h3>
+        <p>PYQ Sets</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>50+</h3>
+        <p>Formula Sheets</p>
+    </div>
+
+</section>
+
+<!-- FEATURED RESOURCES -->
+
+<section class="resources" id="resources">
+
+    <div class="section-title">
+        <h2>Featured Resources</h2>
+        <p>Explore the most popular Electrical Engineering resources.</p>
+    </div>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+            <h3>Electrical Machines</h3>
+            <p>Complete Notes, PYQs & Formula Sheets</p>
+        </div>
+
+        <div class="resource-card">
+            <h3>Power Systems</h3>
+            <p>Exam Focused Study Material</p>
+        </div>
+
+        <div class="resource-card">
+            <h3>Control Systems</h3>
+            <p>Premium Learning Resources</p>
+        </div>
+
+        <div class="resource-card">
+            <h3>Power Electronics</h3>
+            <p>Structured Notes & Questions</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOUNDER -->
+
+<section class="founder" id="about">
+
+    <div class="founder-image">
+
+        <img src="{% static 'images/electrical-hero.png' %}"
+             alt="Er. Prabhat Yadav">
+
+    </div>
+
+    <div class="founder-content">
+
+        <span>Founder</span>
+
+        <h2>Er. Prabhat Yadav</h2>
+
+        <h4>
+            Electrical Engineer | Educator | Founder of Electrical Edge
+        </h4>
+
+        <p>
+            Dedicated to empowering the next generation of engineers
+            through high-quality, practical and exam-focused learning
+            resources. Through Electrical Edge, he aims to make
+            Electrical Engineering education more accessible,
+            structured and effective for students across India.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why-us">
+
+    <div class="section-title">
+        <h2>Why Choose Electrical Edge?</h2>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <h3>📘 Structured Notes</h3>
+            <p>Well-organized notes designed for exam preparation.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>⚡ Practical Learning</h3>
+            <p>Focus on concepts and real-world understanding.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>🎯 Exam Focused</h3>
+            <p>Resources tailored to university exams and GATE.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>📈 Career Growth</h3>
+            <p>Support for placements and higher studies.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+    <div class="section-title">
+        <h2>What Students Say</h2>
+    </div>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+            <p>
+                "The notes are concise, easy to understand and
+                helped me score better in my semester exams."
+            </p>
+            <h4>- B.Tech Student</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>
+                "Electrical Edge made GATE preparation much more
+                organized and efficient."
+            </p>
+            <h4>- GATE Aspirant</h4>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>
+        Start Your Electrical Engineering Journey Today
+    </h2>
+
+    <p>
+        Join thousands of students learning and growing with
+        Electrical Edge.
+    </p>
+
+    <a href="#" class="btn-primary">
+        Get Started
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <h3>Electrical Edge</h3>
+
+
+    <p>
+        Founded by Er. Prabhat Yadav
+    </p>
+
+</footer>
+
+{% endblock %}
