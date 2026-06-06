@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="resources-page">
+
+    <div class="page-header">
+        <h1>Electrical Engineering Resources</h1>
+        <p>Explore premium notes, eBooks, PYQs and formula sheets.</p>
+    </div>
+
+    <form method="GET" class="search-box">
+        <input
+            type="text"
+            name="q"
+            placeholder="Search books..."
+            value="{{ query|default:'' }}"
+        >
+    </form>
+
+    <div class="category-filter">
+
+        <a href="{% url 'book_list' %}" class="btn-secondary">
+            All
+        </a>
+
+        {% for category in categories %}
+
+            <a
+                href="?category={{ category.id }}"
+                class="btn-secondary">
+
+                {{ category.name }}
+
+            </a>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="ebook-grid">
+
+        {% for book in books %}
+
+            <div class="ebook-card">
+
+                {% if book.cover_image %}
+                    <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                {% else %}
+                    <p>No image</p>
+                {% endif %}
+
+                <h3>{{ book.title }}</h3>
+
+                {% if book.category %}
+                    <p>{{ book.category.name }}</p>
+                {% endif %}
+
+                <p>{{ book.description|truncatewords:14 }}</p>
+
+                <h4>₹{{ book.price }}</h4>
+
+                <a href="{% url 'book_detail' book.id %}" class="buy-btn">
+                    View Details
+                </a>
+
+            </div>
+
+        {% empty %}
+
+            <p>No books found.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

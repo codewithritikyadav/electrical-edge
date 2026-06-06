@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="payment-success-page">
+
+    <div class="payment-success-card">
+
+        <h1>Payment Proof Submitted ✅</h1>
+
+        <p>
+            Thank you! Your payment proof has been submitted successfully.
+            Your book will be unlocked after admin verification.
+        </p>
+
+        <a href="{% url 'dashboard' %}" class="btn-primary">
+            Go to Dashboard
+        </a>
+
+        <a href="{% url 'book_list' %}" class="btn-secondary">
+            Browse More Books
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

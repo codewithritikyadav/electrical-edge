@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="resources-page">
+
+    <div class="page-header">
+        <h1>Electrical Engineering Resources</h1>
+        <p>
+            Notes, PYQs, Formula Sheets, eBooks and GATE Materials
+        </p>
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search Resources...">
+    </div>
+
+    <div class="subject-grid">
+
+        <div class="subject-card">
+            ⚡
+            <h3>Electrical Machines</h3>
+        </div>
+
+        <div class="subject-card">
+            🔌
+            <h3>Power Systems</h3>
+        </div>
+
+        <div class="subject-card">
+            📊
+            <h3>Control Systems</h3>
+        </div>
+
+        <div class="subject-card">
+            💡
+            <h3>Power Electronics</h3>
+        </div>
+
+        <div class="subject-card">
+            🔋
+            <h3>Network Theory</h3>
+        </div>
+
+        <div class="subject-card">
+            📡
+            <h3>Signals & Systems</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="ebooks">
+
+    <div class="section-title">
+        <h2>Popular eBooks</h2>
+    </div>
+
+    <div class="ebook-grid">
+
+        <div class="ebook-card">
+
+            <img src="{% static 'images/book-placeholder.jpg' %}" alt="book">
+
+            <h3>Electrical Machines Handbook</h3>
+
+            <p>
+                Complete Notes + PYQs
+            </p>
+
+            <h4>₹199</h4>
+
+            <a href="#" class="buy-btn">
+                View Details
+            </a>
+
+        </div>
+
+        <div class="ebook-card">
+
+            <img src="{% static 'images/notes-placeholder.jpg' %}" alt="book">
+
+            <h3>Power Systems Master Notes</h3>
+
+            <p>
+                Exam Focused Content
+            </p>
+
+            <h4>₹249</h4>
+
+            <a href="#" class="buy-btn">
+                View Details
+            </a>
+
+        </div>
+
+        <div class="ebook-card">
+
+            <img src="{% static 'images/notes-placeholder.jpg' %}" alt="book">
+
+            <h3>Control Systems Notes</h3>
+
+            <p>
+                B.Tech + GATE Preparation
+            </p>
+
+            <h4>₹149</h4>
+
+            <a href="#" class="buy-btn">
+                View Details
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

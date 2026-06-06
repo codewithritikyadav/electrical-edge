@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="payment-page">
+
+    <div class="payment-card">
+
+        <h1>Complete Payment</h1>
+
+        <p>Book: <strong>{{ book.title }}</strong></p>
+        <h2>₹{{ book.price }}</h2>
+
+        <div class="upi-box">
+            <p>Pay using UPI ID:</p>
+            <h3>9756365119-p7b0@ybl</h3>
+
+            <p>Or scan QR code:</p>
+            <img src="{% static 'images/upi--qr.png' %}" alt="UPI QR Code">
+        </div>
+
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="text" name="upi_transaction_id" placeholder="Enter UPI Transaction ID">
+
+            <input type="file" name="payment_screenshot" accept="image/*" required>
+
+            <button type="submit" class="btn-primary">
+                Submit Payment Proof
+            </button>
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

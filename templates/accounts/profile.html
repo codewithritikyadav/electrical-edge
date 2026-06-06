@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="profile-page">
+
+    <div class="profile-card">
+
+        <h1>My Profile</h1>
+
+        <div class="profile-item">
+            <strong>Username:</strong>
+            {{ user.username }}
+        </div>
+
+        <div class="profile-item">
+            <strong>Email:</strong>
+            {{ user.email }}
+        </div>
+
+        <div class="profile-item">
+            <strong>Member Since:</strong>
+            {{ user.date_joined|date:"d M Y" }}
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

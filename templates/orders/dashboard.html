@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="dashboard-container">
+
+    <!-- Sidebar -->
+
+    <div class="dashboard-sidebar">
+
+        <h2>⚡ Electrical Edge</h2>
+
+        <a href="{% url 'dashboard' %}" class="active">
+            Dashboard
+        </a>
+
+        <a href="{% url 'profile' %}">
+            My Profile
+        </a>
+
+        <a href="{% url 'book_list' %}">
+            Resources
+        </a>
+
+        <a href="{% url 'logout' %}">
+            Logout
+        </a>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="dashboard-content">
+
+        <div class="dashboard-top">
+
+            <h1>Welcome, {{ user.username }}</h1>
+
+            <p>
+                Manage your books, payments and resources.
+            </p>
+
+        </div>
+
+        <!-- Stats -->
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+
+                <h3>{{ orders.count }}</h3>
+
+                <p>Purchased Books</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3>{{ pending_payments.count }}</h3>
+
+                <p>Pending Payments</p>
+
+            </div>
+
+        </div>
+
+        <!-- Pending Payments -->
+
+        <div class="dashboard-card">
+
+            <h2>Pending Payments</h2>
+
+            {% for payment in pending_payments %}
+
+            <div class="book-row">
+
+                <div class="book-row-left">
+
+                    {% if payment.book.cover_image %}
+                    <img
+                        src="{{ payment.book.cover_image.url }}"
+                        alt="{{ payment.book.title }}">
+                    {% endif %}
+
+                    <div>
+
+                        <h3>{{ payment.book.title }}</h3>
+
+                        <p>
+                            Submitted:
+                            {{ payment.submitted_at|date:"d M Y" }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <span class="status pending">
+
+                    Waiting Approval
+
+                </span>
+
+            </div>
+
+            {% empty %}
+
+            <p>No pending payments.</p>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Purchased Books -->
+
+        <div class="dashboard-card">
+
+            <h2>My Purchased Books</h2>
+
+            {% for order in orders %}
+
+            <div class="book-row">
+
+                <div class="book-row-left">
+
+                    {% if order.book.cover_image %}
+                    <img
+                        src="{{ order.book.cover_image.url }}"
+                        alt="{{ order.book.title }}">
+                    {% endif %}
+
+                    <div>
+
+                        <h3>{{ order.book.title }}</h3>
+
+                        <p>
+                            Purchased:
+                            {{ order.purchased_at|date:"d M Y" }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+                {% if order.book.full_pdf %}
+
+                <a
+                    href="{{ order.book.full_pdf.url }}"
+                    target="_blank"
+                    class="btn-primary">
+
+                    Download PDF
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+            {% empty %}
+
+            <p>
+                You have not purchased any books yet.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

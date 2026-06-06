@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="book-detail-page">
+
+    <div class="book-detail-card">
+
+        <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+
+        <div class="book-info">
+
+            <h1>{{ book.title }}</h1>
+
+            <p>{{ book.description }}</p>
+
+            <h2>₹{{ book.price }}</h2>
+
+            <div class="book-actions">
+
+                {% if book.sample_pdf %}
+                    <a href="{{ book.sample_pdf.url }}" class="btn-secondary" target="_blank">
+                        Preview Sample
+                    </a>
+                {% endif %}
+
+                <a href="{% url 'manual_payment' book.id %}" class="btn-primary">
+                   Buy Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
