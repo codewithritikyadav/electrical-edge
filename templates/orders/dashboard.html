@@ -143,8 +143,8 @@
                 </div>
 
                 {% if book.sample_pdf %}
-                    <a href="{{ book.sample_pdf.url }}" class="btn-secondary" download>
-                        Download Sample PDF
+                    <a href="{{ order.book.full_pdf.url }}?fl_attachment=true" class="btn-primary">
+                        Download Full PDF
                     </a>
                 {% endif %}
 

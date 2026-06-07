@@ -19,7 +19,7 @@
             <div class="book-actions">
 
             {% if book.sample_pdf %}
-                <a href="{{ book.sample_pdf.url }}" class="btn-secondary" download>
+                <a href="{{ book.sample_pdf.url }}?fl_attachment=true"class="btn-secondary">
                     Download Sample PDF
                 </a>
             {% endif %}
