@@ -144,13 +144,8 @@
 
                 {% if order.book.full_pdf %}
 
-                <a
-                    href="{{ order.book.full_pdf.url }}"
-                    target="_blank"
-                    class="btn-primary">
-
-                    Download PDF
-
+                <a href="{{ order.book.full_pdf.url }}" class="btn-primary" target="_blank" download>
+                    Download Full PDF
                 </a>
 
                 {% endif %}
