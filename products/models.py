@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary_storage.storage import RawMediaCloudinaryStorage
 
 
 class Category(models.Model):
@@ -27,20 +28,18 @@ class Book(models.Model):
         decimal_places=2
     )
 
-    cover_image = models.ImageField(
-        upload_to='books/covers/'
-    )
-
     sample_pdf = models.FileField(
-        upload_to='books/samples/',
-        null=True,
-        blank=True
+    upload_to='books/samples/',
+    storage=RawMediaCloudinaryStorage(),
+    null=True,
+    blank=True
     )
 
     full_pdf = models.FileField(
-        upload_to='books/full/',
-        null=True,
-        blank=True
+    upload_to='books/full/',
+    storage=RawMediaCloudinaryStorage(),
+    null=True,
+    blank=True
     )
 
     is_featured = models.BooleanField(default=False)
